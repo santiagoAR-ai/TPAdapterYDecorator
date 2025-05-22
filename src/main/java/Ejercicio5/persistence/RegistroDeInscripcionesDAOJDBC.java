@@ -1,6 +1,7 @@
 package Ejercicio5.persistence;
 
-import org.example.RegistroDeInscripcion;
+
+import Ejercicio5.modelo.RegistroDeInscripcion;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
