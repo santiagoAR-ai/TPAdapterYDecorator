@@ -3,14 +3,23 @@ package Ejercicio4;
 public class ComboBuilder {
     private Combo combo;
 
-    public ComboBuilder(ComboInicial comboInicial) {
+    public ComboBuilder(Combo comboInicial) {
         this.combo = comboInicial;
     }
-    public void agregarPorcion(ComboInicial comboInicial,Porcion porcion) {
-        this.combo = new ComboDecorator(comboInicial, porcion);
+    public ComboBuilder ComboEspecial(Porcion porcion) {
+        this.combo = new ComboDecorator(this.combo, porcion);
+        return this;
+    }
+    public ComboBuilder ComboBásico(Porcion porcion) {
+        this.combo = new ComboDecorator(this.combo, porcion);
+        return this;
+    }
+    public ComboBuilder ComboFamiliar(Porcion porcion) {
+        this.combo = new ComboDecorator(this.combo, porcion);
+        return this;
     }
 
-    public String combo() {
-        return combo.descripcion();
+    public Combo build() {
+        return this.combo;
     }
 }
